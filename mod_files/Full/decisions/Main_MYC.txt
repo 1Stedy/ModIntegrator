@@ -92,8 +92,8 @@ political_decisions = {
 			clr_country_flag = where_to_move_capital
 			clr_country_flag = capital_events
 			clr_country_flag = capital_events_over
-			treasury = 500000
-			prestige = -10
+			#treasury = 500000
+			#prestige = -10
 		}
 
 		ai_will_do = {

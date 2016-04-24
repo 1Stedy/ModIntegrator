@@ -1,0 +1,55 @@
+#Experimental, work still in progress, does not work now
+political_decisions = {
+	des_0_ai = {
+		potential = {
+			ai = yes
+			OR = {
+				capital_scope = {
+					any_neighbor_province = {
+						owned_by = THIS
+						any_neighbor_province = {
+							owned_by = THIS
+							any_neighbor_province = {
+								NOT = { owned_by = THIS }
+							}
+						}
+					}
+				}
+				capital_scope = {
+					any_neighbor_province = {
+						owned_by = THIS
+						any_neighbor_province = {
+							NOT = { owned_by = THIS }
+						}
+					}
+				}
+				capital_scope = {
+					any_neighbor_province = {
+						NOT = { owned_by = THIS }
+					}
+				}
+			}
+			war = no
+		}
+		allow = {}
+		
+		effect = {
+			country_event = 6280000
+			set_variable = { 
+				which = speed
+				value = -1
+			}
+			set_variable = { 
+				which = ep
+				value = -1
+			}
+			set_variable = { 
+				which = reparations
+				value = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

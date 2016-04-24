@@ -14,7 +14,7 @@ country_event = {
 	
 	option = {
 		name = "627$id$_OP1"
-		fprovincef = {
+		$province$ = {
 			remove_province_modifier = new_capital
 		}
 		clr_country_flag = capital_events_over

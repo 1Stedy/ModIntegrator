@@ -25,7 +25,8 @@
 			clr_country_flag = where_to_move_capital
 			$province$ = {
 				add_province_modifier = {
-					name = new_capital duration = -1
+					name = new_capital
+					duration = -1
 				}
 			}
 			treasury = -1000000

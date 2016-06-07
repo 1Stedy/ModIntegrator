@@ -757,13 +757,13 @@ country_event = {
 			which = speed
 			value = 0
 		}
-		war = no			
+		war = no
 	}
 
 	mean_time_to_happen = {
 		months = 6
 		modifier = {
-			factor = 0.75
+			factor = 0.5
 			check_variable = {
 				which = speed
 				value = 2.9
@@ -852,7 +852,7 @@ country_event = {
 	mean_time_to_happen = {
 		months = 6
 		modifier = {
-			factor = 0.75
+			factor = 0.5
 			check_variable = {
 				which = speed
 				value = 2.9
@@ -955,9 +955,9 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 9
+		months = 6
 		modifier = {
-			factor = 0.75
+			factor = 0.5
 			check_variable = {
 				which = speed
 				value = 2.9
@@ -975,7 +975,6 @@ country_event = {
 			}}
 		}
 	}
-
 	
 	option = {
 		name = "627004_OP1"
@@ -1014,9 +1013,9 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 9
+		months = 6
 		modifier = {
-			factor = 0.75
+			factor = 0.5
 			check_variable = {
 				which = speed
 				value = 2.9
@@ -1034,9 +1033,8 @@ country_event = {
 			}}
 		}
 	}
-
-	option = {
-		name = "627005_OP1"
+	
+	immediate = {
 		capital_scope = {		
 			life_rating = -2
 			add_province_modifier = {
@@ -1044,6 +1042,10 @@ country_event = {
 				duration = 365
 			}
 		}
+	}
+
+	option = {
+		name = "627005_OP1"
 		set_country_flag = capital_events_over
 		clr_country_flag = capital_events
 	}
@@ -1078,9 +1080,9 @@ country_event = {
 	}
 
 	mean_time_to_happen = {
-		months = 9
+		months = 6
 		modifier = {
-			factor = 0.75
+			factor = 0.5
 			check_variable = {
 				which = speed
 				value = 2.9
@@ -1098,9 +1100,8 @@ country_event = {
 			}}
 		}
 	}
-
-	option = {
-		name = "627006_OP1"
+	
+	immediate = {
 		capital_scope = {		
 			life_rating = -3
 			add_province_modifier = {
@@ -1108,6 +1109,10 @@ country_event = {
 				duration = 365
 			}
 		}
+	}
+
+	option = {
+		name = "627006_OP1"
 		set_country_flag = capital_events_over
 		clr_country_flag = capital_events
 	}

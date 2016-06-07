@@ -1,0 +1,64 @@
+#Experimental, work still in progress, does not work now
+political_decisions = {
+	des_0_ai = {
+		potential = {
+
+		}
+		allow = {
+			#ai = yes
+			war = no
+			money = 2000000
+			num_of_cities = 30
+			any_neighbor_country = {
+				NOT = {
+					OR = {
+						vassal_of = THIS
+						in_sphere = THIS
+						alliance_with = THIS
+						relation = { who = THIS value = 100 }
+					}
+				}
+				military_score = THIS
+				OR = {
+					any_owned_province = {
+						any_neighbor_province = {
+							AND = {
+								is_capital = yes
+								owned_by = THIS
+							}
+						}
+					}
+					any_owned_province = {
+						any_neighbor_province = {
+							any_neighbor_province = {
+								AND = {
+									is_capital = yes
+									owned_by = THIS
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = {
+			country_event = 6280000
+			set_variable = { 
+				which = speed
+				value = -1
+			}
+			set_variable = { 
+				which = ep
+				value = -1
+			}
+			set_variable = { 
+				which = reparations
+				value = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

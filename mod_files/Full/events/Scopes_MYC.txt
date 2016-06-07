@@ -1,0 +1,99 @@
+#Adding modifiers to capital and near regions. Have MTTH option just to not load engine
+#Also it runs as hidden event for human players
+
+#For human
+country_event = {
+	id = 6290001
+	trigger = {
+		any_neighbor_country = {
+			capital_scope = {
+				NOT = {
+					has_province_modifier = capital_focus
+				}
+			}
+			ai = no
+		}
+		ai = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		any_neighbor_country = {
+			limit = {
+				capital_scope = {
+					NOT = {
+						has_province_modifier = capital_focus
+					}
+				}
+				ai = no
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = capital_focus
+				}
+				remove_province_modifier = capital_focus
+			}
+			any_owned = {
+				limit = {
+					has_province_modifier = near_capital
+				}
+				remove_province_modifier = near_capital
+			}
+			capital_scope = {
+				add_province_modifier = { name = capital_focus duration = -1 }
+			}
+			any_owned = {
+				limit = {
+					any_neighbor_province = {
+						is_capital = yes
+					}
+				}
+				add_province_modifier = { name = near_capital duration = -1 }
+			}
+		}
+	}
+}
+
+#For AI
+country_event = {
+	id = 6290002
+	trigger = {
+		capital_scope = {
+			NOT = {
+				has_province_modifier = capital_focus
+			}
+		}
+		ai = yes
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {
+		any_owned = {
+			limit = {
+				has_province_modifier = capital_focus
+			}
+			remove_province_modifier = capital_focus
+		}
+		any_owned = {
+			limit = {
+				has_province_modifier = near_capital
+			}
+			remove_province_modifier = near_capital
+		}
+		capital_scope = {
+			add_province_modifier = { name = capital_focus duration = -1 }
+			any_neighbor_province = {
+				limit = {
+					owned_by = THIS
+				}
+				add_province_modifier = { name = near_capital duration = -1 }
+			}
+		}
+	}
+}

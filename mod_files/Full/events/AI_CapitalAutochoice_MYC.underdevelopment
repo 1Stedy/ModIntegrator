@@ -1,0 +1,98 @@
+#Autochoice capital for AI
+#Does not work now
+
+country_event = {
+	id = 6280000
+	
+	trigger = {
+		#ai = yes
+		war = no
+		money = 2000000
+		num_of_cities = 30
+		any_neighbor_country = {
+			NOT = {
+				OR = {
+					is_vassal = yes
+					in_sphere = THIS
+					alliance_with = THIS
+					relation = { who = THIS value = 100 }
+				}
+			}
+			stronger_army_than = THIS
+		}
+		OR = {
+			capital_scope = {
+				any_neighbor_province = {
+					limit = {
+						owned_by = THIS
+					}
+					any_neighbor_province = {
+						NOT = { owned_by = THIS }
+					}
+				}
+			}
+			capital_scope = {
+				any_neighbor_province = {
+					NOT = { owned_by = THIS }
+				}
+			}
+		}
+	}
+	
+	option = {
+		capital_scope = {
+			any_neighbor_province = {
+				limit = {
+					is_core = yes
+					is_overseas = no
+					is_colonial = no
+					OR = {
+						any_neighbor_province = {
+							limit = {
+								owned_by = THIS
+							}
+							any_neighbor_province = {
+								limit = {
+									owned_by = THIS
+								}
+								any_neighbor_province = {
+									owned_by = THIS
+								}
+							}
+						}
+						any_neighbor_province = {
+							limit = {
+								owned_by = THIS
+							}
+							any_neighbor_province = {
+								owned_by = THIS
+							}
+						}
+						any_neighbor_province = {
+							owned_by = THIS
+						}
+					}
+				}
+				add_province_modifier = {
+						name = new_capital
+						duration = -1
+				}
+			}
+		}
+		set_variable = { 
+			which = speed
+			value = -1
+		}
+		set_variable = { 
+			which = ep
+			value = -1
+		}
+		set_variable = { 
+			which = reparations
+			value = -1
+		}
+		set_country_flag = capital_events
+		treasury = -1000000
+		prestige = -100
+	}
+}
